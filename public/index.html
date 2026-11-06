@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#131313" />
+    <meta
+      name="facebook-domain-verification"
+      content="zyf3u515gumkrk7cngf95jbz2c5zkg"
+    />
+    <meta
+      name="description"
+      content="Elva - Your personal AI director, turning everyday videos into emotional stories."
+    />
+    <title>Elva</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script type="module" crossorigin src="/assets/main-DLg1oGUN.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/menu-DI7zF93a.js">
+    <link rel="modulepreload" crossorigin href="/assets/three.module-CzdsL6Qv.js">
+    <link rel="modulepreload" crossorigin href="/assets/NeueHaasDisplay-XXThin-B_GJ8Mxd.js">
+    <link rel="modulepreload" crossorigin href="/assets/GravityBalls-D37pvzOo.js">
+    <link rel="modulepreload" crossorigin href="/assets/press-center-CoyN8cpA.js">
+    <link rel="modulepreload" crossorigin href="/assets/download-6UKj71yk.js">
+    <link rel="stylesheet" crossorigin href="/assets/menu-DjKzWaJ3.css">
+    <style>
+      .desktop-content,
+      .footer-bottom {
+        visibility: hidden;
+      }
+      body.is-ready .desktop-content,
+      body.is-ready .footer-bottom {
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+  <a href="/" class="header__logo" aria-label="Elva home">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <foreignObject x="-20" y="-20" width="88" height="88"></foreignObject>
+      <rect data-figma-bg-blur-radius="20" x="0.5" y="0.5" width="47" height="47" rx="15.5" fill="#232323" fill-opacity="0.4" stroke="white" />
+      <path d="M17.28 25.376C17.28 25.7067 17.2587 26.0053 17.216 26.272H10.48C10.5333 26.976 10.7947 27.5413 11.264 27.968C11.7333 28.3947 12.3093 28.608 12.992 28.608C13.9733 28.608 14.6667 28.1973 15.072 27.376H17.04C16.7733 28.1867 16.288 28.8533 15.584 29.376C14.8907 29.888 14.0267 30.144 12.992 30.144C12.1493 30.144 11.392 29.9573 10.72 29.584C10.0587 29.2 9.536 28.6667 9.152 27.984C8.77867 27.2907 8.592 26.4907 8.592 25.584C8.592 24.6773 8.77333 23.8827 9.136 23.2C9.50933 22.5067 10.0267 21.9733 10.688 21.6C11.36 21.2267 12.128 21.04 12.992 21.04C13.824 21.04 14.5653 21.2213 15.216 21.584C15.8667 21.9467 16.3733 22.4587 16.736 23.12C17.0987 23.7707 17.28 24.5227 17.28 25.376ZM15.376 24.8C15.3653 24.128 15.1253 23.5893 14.656 23.184C14.1867 22.7787 13.6053 22.576 12.912 22.576C12.2827 22.576 11.744 22.7787 11.296 23.184C10.848 23.5787 10.5813 24.1173 10.496 24.8H15.376ZM20.579 18.16V30H18.755V18.16H20.579ZM26.0617 28.368L28.5578 21.184H30.4937L27.1337 30H24.9577L21.6137 21.184H23.5657L26.0617 28.368ZM30.9445 25.552C30.9445 24.6667 31.1258 23.8827 31.4885 23.2C31.8618 22.5173 32.3632 21.9893 32.9925 21.616C33.6325 21.232 34.3365 21.04 35.1045 21.04C35.7978 21.04 36.4005 21.1787 36.9125 21.456C37.4352 21.7227 37.8512 22.0587 38.1605 22.464V21.184H40.0005V30H38.1605V28.688C37.8512 29.104 37.4298 29.4507 36.8965 29.728C36.3632 30.0053 35.7552 30.144 35.0725 30.144C34.3152 30.144 33.6218 29.952 32.9925 29.568C32.3632 29.1733 31.8618 28.6293 31.4885 27.936C31.1258 27.232 30.9445 26.4373 30.9445 25.552ZM38.1605 25.584C38.1605 24.976 38.0325 24.448 37.7765 24C37.5312 23.552 37.2058 23.2107 36.8005 22.976C36.3952 22.7413 35.9578 22.624 35.4885 22.624C35.0192 22.624 34.5818 22.7413 34.1765 22.976C33.7712 23.2 33.4405 23.536 33.1845 23.984C32.9392 24.4213 32.8165 24.944 32.8165 25.552C32.8165 26.16 32.9392 26.6933 33.1845 27.152C33.4405 27.6107 33.7712 27.9627 34.1765 28.208C34.5925 28.4427 35.0298 28.56 35.4885 28.56C35.9578 28.56 36.3952 28.4427 36.8005 28.208C37.2058 27.9733 37.5312 27.632 37.7765 27.184C38.0325 26.7253 38.1605 26.192 38.1605 25.584Z" fill="white" />
+      <defs>
+        <clipPath id="bgblur_0_0_899_clip_path" transform="translate(20 20)">
+          <rect x="0.5" y="0.5" width="47" height="47" rx="15.5" />
+        </clipPath>
+      </defs>
+    </svg>
+  </a>
+  <div class="header__buttons">
+    <div class="menu">
+      <div class="menu__button btn">
+        <div class="menu__text">Menu</div>
+        <div class="menu__icon">
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+      <div class="menu__dropdown">
+        <div class="menu__item btn"><a href="/press-center.html">Press Center</a></div>
+      </div>
+    </div>
+    <a class="betanew btn" data-funnel-link href="https://quiz.elvalabs.ai/website">
+      <svg width="180" height="52">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="30%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0989d8" />
+            <stop offset="100%" stop-color="#850dee" />
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" rx="16" fill="none" stroke="url(#grad1)" width="176" height="48"></rect>
+      </svg>
+      <span>try yourself</span>
+    </a>
+  </div>
+</div>
+<script type="module" src="/funnel-link.js"></script>
+
+    <div class="download">
+  <div class="download__overlay"></div>
+  <div class="download__content">
+    <div class="download__close" aria-label="Close">
+      <div class="close">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <h2 class="download__title">Get the Elva app</h2>
+    <p class="download__subtitle">Scan the QR code to download the app</p>
+    <div class="download__qr">
+      <img src="/qr-download.svg" alt="QR code to download Elva" />
+    </div>
+  </div>
+</div>
+
+
+    <div class="footer">
+      <div class="footer__left">
+        <a href="https://www.lazarev.agency/"
+          ><img src="/assets/lazarev-CA2bWvHv.svg" alt=""
+        /></a>
+      </div>
+      <div class="footer__credits">
+        <a href="#" data="js-gototop"><img src="data:image/svg+xml,%3csvg%20width='33'%20height='33'%20viewBox='0%200%2033%2033'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='16.5'%20cy='16.5'%20r='2'%20fill='white'/%3e%3cpath%20opacity='0.2'%20d='M32.5%2011.6746C32.5%205.50304%2027.497%200.500001%2021.3254%200.500001L11.6746%200.500001C5.50304%200.5%200.500002%205.50304%200.500001%2011.6746M32.5%2021.3254C32.5%2027.497%2027.497%2032.5%2021.3254%2032.5L11.6746%2032.5C5.50305%2032.5%200.500001%2027.497%200.500001%2021.3254'%20stroke='white'/%3e%3c/svg%3e" alt="" /></a>
+      </div>
+    </div>
+
+    <div class="mobile-content">
+      <div class="cont">
+        <div class="mtag">
+          Some stories need more<br />
+          space to unfold
+        </div>
+        <h2>
+          Elva is your personal AI<br />
+          director, turning everyday<br />
+          videos into emotional<br />
+          stories.
+        </h2>
+        <p>
+          For the full AI cinematic <br />
+          experience, please view this website<br />
+          on a desktop device.
+        </p>
+      </div>
+    </div>
+
+    <!-- begin desktop content -->
+    <div class="desktop-content">
+      <div id="iphonecontent">
+        <div class="iphonecontent__bg"></div>
+        <div class="video">
+          <video src="/flow_fixed_m.mp4" muted playsinline autoplay preload></video>
+        </div>
+        <div class="mainflow-iphone">
+          <video
+            class="mainflow-video active"
+            data-index="0"
+            src="/mainflow/1_1_m.mp4"
+            muted
+            playsinline
+            loop
+            autoplay
+          ></video>
+          <video
+            class="mainflow-video"
+            data-index="1"
+            src="/mainflow/1_2_m.mp4"
+            muted
+            playsinline
+            loop
+            preload="none"
+          ></video>
+          <video
+            class="mainflow-video"
+            data-index="2"
+            src="/mainflow/1_3_m.mp4"
+            muted
+            playsinline
+            loop
+            preload="none"
+          ></video>
+          <video
+            class="mainflow-video"
+            data-index="3"
+            src="/mainflow/1_41_m.mp4"
+            muted
+            playsinline
+            loop
+            preload="none"
+          ></video>
+          <video
+            class="mainflow-video"
+            data-index="4"
+            src="/mainflow/1_5_m.mp4"
+            muted
+            playsinline
+            loop
+            preload="none"
+          ></video>
+        </div>
+        <div class="card card1">
+          <h2 class="card__title">
+            Meet Elva.<br />A filmmaking crew in your phone.
+          </h2>
+          <p class="card__text">
+            The first AI agent that edits, directs, and shapes<br> your memories.
+          </p>
+        </div>
+        <div class="card card2">
+          <h2 class="card__title">
+            Just shoot. Elva<br> turns your footage<br> into stories you’ll<br> actually want to<br> share.
+          </h2>
+          <p class="card__text">
+           Guided by AI, enhanced with music and styles,<br> ready to share in minutes.
+          </p>
+        </div>
+      </div>
+
+      <div class="whatis">
+        <div class="tag">What Elva Is</div>
+        <h2>Your personal AI <br>agent for video</h2>
+        <p>
+         No editing tools.<br>
+No complexity. Just your story.
+        </p>
+      </div>
+
+      <div class="every">
+        <div class="tag">Problem Of The Majority</div>
+        <h2>
+         Every video holds a feeling. But<br> it gets lost in raw clips that<br> never get seen.
+        </h2>
+      </div>
+
+      <div class="moments">
+        <div class="tag">How Elva Fixes It</div>
+        <h2>
+          <span>Elva</span> <span>picks</span> <span>the</span> <span>clips</span><br> <span>and</span> <span>finds</span> <span>what</span> <span>makes</span><br> <span>the moment</span> <span>matter</span>
+        </h2>
+        <p>So even everyday footage feels vivid,<br> emotional, and alive</p>
+      </div>
+
+      <div class="whatelvais">
+        <div class="whatelvais__content">
+          <div class="tag">It's easier than you think</div>
+          <h2>You click a button and Elva creates best stories for you</h2>
+          <p>
+            You don’t need to cut clips, adjust<br />
+            timelines, or learn tools.
+          </p>
+        </div>
+      </div>
+
+      <div class="stress">
+        <div class="tag">Intelligent Camera</div>
+        <h2>
+         Finally, your videos<br> look as good as the<br> moment felt.
+        </h2>
+        <p>
+         Elva guides framing, timing, and<br> capture so every shot looks better.
+        </p>
+      </div>
+
+      <div class="sideTexts">
+        <div class="sideTexts__left">
+          <span>Video</span> <span>or</span> <span>photography.</span>
+        </div>
+        <div class="sideTexts__right">
+          <span>Elva provides real-time</span> <span>feedback</span>
+          <span>to</span> <span>your</span>
+          <span>camera.</span>
+        </div>
+      </div>
+
+      <div class="mainflow">
+        <div class="mainflow__progress">
+          <svg width="48" height="48" viewBox="0 0 48 48">
+            <circle
+              cx="24"
+              cy="24"
+              r="23"
+              fill="none"
+              stroke="#444"
+              stroke-width="1"
+            />
+            <circle
+              class="mainflow__progress-ring"
+              cx="24"
+              cy="24"
+              r="23"
+              fill="none"
+              stroke="#fff"
+              stroke-width="1"
+              stroke-linecap="round"
+            />
+          </svg>
+          <div class="mainflow__numbers">
+            <span class="mainflow__current">1</span> / 4
+          </div>
+        </div>
+
+        <div class="mainflow__step">
+          <div class="mainflow__left">
+            <div class="tag">Add clips</div>
+            <h2>
+              <span>Start</span> <span>with</span> <span>the</span> <span>videos</span><br />
+              <span>you</span> <span>already</span> <span>have</span>
+            </h2>
+            <p>
+             Elva sorts through everything and<br> builds the foundation for your story.
+            </p>
+          </div>
+          <!-- <div class="mainflow__right">
+					<h2><span>Elva</span> <span>organizes</span><br> <span>everything</span> <span>and</span><br>
+						<span>prepares</span> <span>them</span> <span>for</span><br> <span>a</span>
+						<span>seamless</span> <span>story.</span></h2>
+				</div> -->
+        </div>
+
+        <div class="mainflow__step">
+          <div class="mainflow__left">
+            <div class="tag">Talk to Elva</div>
+            <h2>
+              <span>Tell</span> <span>Elva</span> <span>what</span>
+              <span>you</span><br /> <span>want</span> <span>—</span> <span>the</span>
+              <span>mood,</span><br /> <span>the</span> <span>pace,</span> <span>the vibe</span>
+            </h2>
+            <p>
+             It listens and turns your idea into<br> a finished edit.
+            </p>
+          </div>
+          <!-- <div class="mainflow__right">
+					<h2><span>Elva</span> <span>listens</span> <span>and</span><br> <span>turns</span> <span>your</span>
+						<span>idea</span> <span>into</span><br> <span>a</span> <span>ready</span> <span>edit.</span>
+					</h2>
+				</div> -->
+        </div>
+
+        <div class="mainflow__step">
+          <div class="mainflow__left">
+            <div class="tag">Music. Captions. Voice.</div>
+            <h2>
+
+              <span>Elva</span> <span>finishes</span> <span>the</span>
+              <span>edit</span><br /> <span>with</span> <span>music,</span>
+              <span>captions,</span><br /> <span>and</span> <span>voiceover.</span>
+            </h2>
+            <p>
+             So every video feels polished,<br> personal, and ready to share.
+            </p>
+          </div>
+          <!-- <div class="mainflow__right">
+					<h2><span>Recreates</span> <span>your</span><br> <span>voice</span> <span>with</span>
+						<span>stunning</span><br> <span>clarity</span> <span>—</span> <span>making</span><br>
+						<span>every</span> <span>video</span> <span>feel</span><br> <span>uniquely</span>
+						<span>yours.</span></h2>
+				</div> -->
+        </div>
+
+        <div class="mainflow__step">
+          <div class="mainflow__left">
+            <div class="tag">choose&nbsp;and&nbsp;share</div>
+            <h2>
+              <span>Pick</span> <span>the</span> <span>edit</span>
+              <span>that</span><br />
+              <span>feels</span> <span>right.</span>
+            </h2>
+            <p>
+              Choose from a few versions, then<br> save or share in seconds.
+            </p>
+          </div>
+          <!-- <div class="mainflow__right">
+					<h2><span>Choose</span> <span>from</span><br> <span>multiple</span> <span>story</span><br>
+						<span>options</span> <span>and</span> <span>share</span><br>
+						<span>your</span><span>video</span><br> <span>instantly.</span></h2>
+				</div> -->
+        </div>
+      </div>
+
+      <div class="mainflow-mobile">
+        <div class="mainflow-mobile__item">
+          <div class="tag">Add clips</div>
+          <h2>Upload your videos and photos.</h2>
+          <p>
+            Elva organizes everything and prepares them for a seamless story.
+          </p>
+          <div class="mainflow-mobile__phone">
+            <div>
+            <video
+              src="/mainflow/1_1_m.mp4"
+              muted
+              playsinline
+              loop
+              preload="none"
+            ></video>
+            </div>
+          </div>
+        </div>
+        <div class="mainflow-mobile__item">
+          <div class="tag">Talk to Elva</div>
+          <h2>Describe what you want — pacing, mood, transitions.</h2>
+          <p>Elva listens and turns your idea into a ready edit.</p>
+          <div class="mainflow-mobile__phone">
+            <div>
+            <video
+              src="/mainflow/1_2_m.mp4"
+              muted
+              playsinline
+              loop
+              preload="none"
+            ></video>
+            </div>
+          </div>
+        </div>
+        <div class="mainflow-mobile__item">
+          <div class="tag">Music. Voiceover.</div>
+          <h2>Elva syncs your moments to music, adds clean captions.</h2>
+          <p>
+            Recreates your voice with stunning clarity — making every video feel
+            uniquely yours.
+          </p>
+          <div class="mainflow-mobile__phone">
+            <div>
+            <video
+              src="/mainflow/1_3_m.mp4"
+              muted
+              playsinline
+              loop
+              preload="none"
+            ></video>
+            </div>
+          </div>
+        </div>
+        <div class="mainflow-mobile__item">
+          <div class="tag">Choose and share</div>
+          <h2>Pick a story. Share the feeling.</h2>
+          <p>
+            Choose from multiple story options and share your video instantly.
+          </p>
+          <div class="mainflow-mobile__phone">
+            <div>
+            <video
+              src="/mainflow/1_41_m.mp4"
+              muted
+              playsinline
+              loop
+              preload="none"
+            ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="elva">
+        <div class="elva__pulse"></div>
+      </div>
+
+      <div class="features">
+        <div class="tag">More Inside The Camera</div>
+        <div class="feature" data-index="0" data-image="/features/0.png">
+          <h2>Pose Mirror</h2>
+          <p>
+           Elva helps you adjust your pose in real time, so you look<br> more natural and more confident on camera.
+          </p>
+          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+        </div>
+        <div class="feature" data-index="1" data-image="/features/1.png">
+          <h2>Real-time Guidance</h2>
+          <p>
+           Get live help with framing, horizon, and composition, so<br> every shot starts stronger.
+          </p>
+          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+        </div>
+        <div class="feature" data-index="2" data-image="/features/2.png">
+          <h2>Flow Arcs</h2>
+          <p>
+           Flow Arcs guide your camera along natural motion paths —<br> helping every shot feel smooth, intentional, and cinematic.
+          </p>
+          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+        </div>
+        <div class="feature" data-index="3" data-image="/features/3.png">
+          <h2>Lighting Spot</h2>
+          <p>
+           Lighting Spot helps you find the best light in the scene —<br> guiding you toward natural, cinematic lighting in seconds.
+          </p>
+          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+        </div>
+        <div class="feature" data-index="4" data-image="/features/4.png">
+          <h2>Scene Sense</h2>
+          <p>
+          Scene Sense reads the feeling of the scene and helps you<br> shoot in a way that matches it.
+          </p>
+          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+        </div>
+      </div>
+
+      <div class="footer-title">
+        <div class="footer-title__header">
+          Stop editing.<br class="mobile" />
+          Keep shooting
+          <div class="footer-title__topleft">
+            <ul>
+              <li><span>slow moments</span></li>
+              <li><span>unspoken feelings</span></li>
+              <li><span>shared silence</span></li>
+              <li><span>calm movement</span></li>
+            </ul>
+          </div>
+          <div class="footer-title__topright">
+            <ul>
+              <li><span>fleeting seconds</span></li>
+              <li><span>warm evenings</span></li>
+              <li><span>almost forgotten</span></li>
+            </ul>
+          </div>
+
+          <div class="footer-title__leftcenter">
+           <p>General inquiries:<br>
+<a href="mailto:hello@elvalabs.ai">hello@elvalabs.ai</a></p>
+
+<p>Partnerships:<br>
+<a href="mailto:partners@elvalabs.ai">partners@elvalabs.ai</a></p>
+
+          </div>
+
+            <div class="footer-title__rightcenter">
+           <p>Press:<br>
+<a href="mailto:press@elvalabs.ai">press@elvalabs.ai</a></p>
+
+<p>Careers:<br>
+<a href="mailto:hr@elvalabs.ai">hr@elvalabs.ai</a></p>
+
+<div class="footer-socials">
+  <a href="https://www.instagram.com/elvalabs.ai" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+  </a>
+  <a href="https://www.tiktok.com/@elvalabs.ai" target="_blank" rel="noopener" aria-label="TikTok">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+  </a>
+  <a href="https://www.facebook.com/elvalabs" target="_blank" rel="noopener" aria-label="Facebook">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+  </a>
+</div>
+
+          </div>
+
+          <div class="footer-title__topcenter">
+            <ul>
+              <li><span>how it felt</span> <span>before it faded</span></li>
+              <li>
+                <span>just for a moment</span> <span>exactly like that</span>
+              </li>
+              <li><span>the feeling stayed</span> <span>still here</span></li>
+              <li><span></span><span>not lost</span></li>
+              <li><span></span><span>remembered</span></li>
+            </ul>
+          </div>
+
+          <div class="footer-title__bottomwrap">
+            <div class="footer-title__bottomleft">
+              <ul>
+                <li>
+                  <span>Company: <br />Elvalabs LTD</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-title__bottomright">
+              <ul>
+                <li><span>Company address:</span></li>
+                <li><span>13 Kypranoros Street, EVI </span></li>
+                <li><span>Building, 2nd Floor,</span></li>
+                <li><span>Office 201,1061 Nicosia, Cyprus</span></li>
+              </ul>
+            </div>
+            <div class="footer-title__bottomcenter">
+              <ul>
+                <li><span>2026 Ⓒ</span> <span>All rights reserved.</span></li>
+                <li>
+                  <span>design and development</span>
+                  <span
+                    ><a href="https://www.lazarev.agency/"
+                      >Lazarev Agency<img src="/upright.svg" /></a
+                  ></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end desktop content -->
+    <div id="container"></div>
+    <div class="footer-bottom">
+      <a href="terms-of-use.html"
+        ><span>ELVA Terms of use</span>
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25146 9.75098L9.75146 2.25098"
+            stroke="#B3B3B3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2.25146 2.25098H9.75146V9.75098"
+            stroke="#B3B3B3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+      <a href="privacy-policy.html"
+        ><span>ELVA Privacy policy</span
+        ><svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25146 9.75098L9.75146 2.25098"
+            stroke="#B3B3B3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2.25146 2.25098H9.75146V9.75098"
+            stroke="#B3B3B3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+      ></a>
+    </div>
+  </body>
+</html>
