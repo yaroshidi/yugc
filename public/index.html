@@ -629,5 +629,26 @@ No complexity. Just your story.
           /></svg
       ></a>
     </div>
+    <script>
+      document.querySelectorAll(".mainflow-video").forEach((video) => {
+        const markReady = () => {
+          if (video.readyState >= 2) video.classList.add("is-ready");
+        };
+        video.addEventListener("loadeddata", markReady);
+        video.addEventListener("canplay", markReady);
+        const wake = () => {
+          if (!video.classList.contains("active")) return;
+          video.preload = "auto";
+          const play = video.play();
+          if (play) play.catch(() => {});
+          markReady();
+        };
+        new MutationObserver(wake).observe(video, {
+          attributes: true,
+          attributeFilter: ["class"],
+        });
+        wake();
+      });
+    </script>
   </body>
 </html>
