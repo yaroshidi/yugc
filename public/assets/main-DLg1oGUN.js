@@ -215,9 +215,9 @@ Keep shooting`:"Stop editing. Keep shooting";this.footerTitleText=this.getBackgr
 AI video generation
 in your phone.
 For the clips you
-already have.`,`Just shoot. YUGC turns your
-footage into stories you’ll
-actually want to share.`,"YUGC is AI video generation",`Every video holds a feeling. But
+already have.`,`Just shoot.
+YUGC generates
+the video.`,"YUGC is AI video generation",`Every video holds a feeling. But
 it gets lost in raw clips that
 never get seen.`,`YUGC picks the clips and finds 
 what makes the moment 
@@ -243,9 +243,9 @@ Choose from a few versions,
 then save or share in seconds.`],s=[`Meet YUGC.
 AI video
 generation in
-your phone`,`Just shoot, YUGC turns
-your footage into stories
-you'll actually want to share`,`YUGC is AI video
+your phone`,`Just shoot.
+YUGC generates
+the video.`,`YUGC is AI video
 generation`,`Every video holds a feeling. But
 it gets lost in raw clips that
 never get seen.`,`Every video holds a feeling. But
