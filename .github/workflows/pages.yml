@@ -59,6 +59,22 @@ jobs:
           encode public/mainflow/1_3_m.mp4 public/mainflow/1_3_m.webm -vf fps=30 "${common[@]}" -b:v 1200k -crf 38
           encode public/mainflow/1_41_m.mp4 public/mainflow/1_41_m.webm "${common[@]}" -b:v 1400k -crf 40
 
+          # The feature list used to show someone else's camera clips.
+          # Swap those stills for frames from the creator sheet when the old files are still in place.
+          old0=0f23411837bdc3a4e37f3c9648eeb89512a2ed267791bad2b123d33d5c2fbff8
+          if [[ -f public/features/0.png ]] && [[ "$(sha256sum public/features/0.png | awk '{print $1}')" == "$old0" ]]; then
+            ffmpeg -y -ss 2 -i public/casesprite.webm -frames:v 1 /tmp/case.png
+            crop() {
+              local col="$1" row="$2" out="$3"
+              ffmpeg -y -i /tmp/case.png -vf "crop=430:932:$((col * 430)):$((row * 932))" "$out"
+            }
+            crop 0 0 public/features/0.png
+            crop 3 0 public/features/1.png
+            crop 1 1 public/features/2.png
+            crop 1 0 public/features/3.png
+            crop 2 0 public/features/4.png
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           shopt -s nullglob
