@@ -22,19 +22,19 @@
       content="YUGC makes UGC videos for your brand. Creator-style ads, ready to run."
     />
     <title>YUGC</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <script type="module" crossorigin src="/assets/main-DLg1oGUN.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/menu-DI7zF93a.js">
-    <link rel="modulepreload" crossorigin href="/assets/three.module-CzdsL6Qv.js">
-    <link rel="modulepreload" crossorigin href="/assets/NeueHaasDisplay-XXThin-B_GJ8Mxd.js">
-    <link rel="modulepreload" crossorigin href="/assets/GravityBalls-D37pvzOo.js">
-    <link rel="modulepreload" crossorigin href="/assets/press-center-CoyN8cpA.js">
-    <link rel="modulepreload" crossorigin href="/assets/download-6UKj71yk.js">
-    <link rel="stylesheet" crossorigin href="/assets/menu-DjKzWaJ3.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <script type="module" crossorigin src="assets/main-DLg1oGUN.js?v=6"></script>
+    <link rel="modulepreload" crossorigin href="assets/menu-DI7zF93a.js">
+    <link rel="modulepreload" crossorigin href="assets/three.module-CzdsL6Qv.js">
+    <link rel="modulepreload" crossorigin href="assets/NeueHaasDisplay-XXThin-B_GJ8Mxd.js">
+    <link rel="modulepreload" crossorigin href="assets/GravityBalls-D37pvzOo.js">
+    <link rel="modulepreload" crossorigin href="assets/press-center-CoyN8cpA.js">
+    <link rel="modulepreload" crossorigin href="assets/download-6UKj71yk.js">
+    <link rel="stylesheet" crossorigin href="assets/menu-DjKzWaJ3.css">
     <style>
       .desktop-content,
       .footer-bottom {
@@ -44,12 +44,89 @@
       body.is-ready .footer-bottom {
         visibility: visible;
       }
+      #iphonecontent {
+        visibility: hidden;
+      }
+      #iphonecontent.placed {
+        visibility: visible;
+      }
+      .hero-fallback {
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7vw;
+        padding: 10vh 8vw 8vh;
+        background: #131313;
+        color: #fff;
+        pointer-events: none;
+      }
+      .hero-fallback h1 {
+        font-weight: 500;
+        font-size: clamp(42px, 5.2vw, 76px);
+        line-height: 0.92;
+        letter-spacing: -0.035em;
+      }
+      .hero-fallback p {
+        margin-top: 18px;
+        max-width: 280px;
+        font-size: 16px;
+        line-height: 1.45;
+        color: rgba(255, 255, 255, 0.72);
+      }
+      .hero-fallback__phone {
+        width: min(280px, 32vw);
+        aspect-ratio: 9 / 19.5;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #0a0a0a;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      }
+      .hero-fallback__phone video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        background: #0a0a0a;
+      }
+      body.is-ready:not(.no-webgl) .hero-fallback {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.45s ease, visibility 0.45s ease;
+      }
+      @media (max-width: 800px) {
+        .hero-fallback {
+          flex-direction: column-reverse;
+          gap: 28px;
+          text-align: center;
+          padding: 96px 24px 48px;
+        }
+        .hero-fallback p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-fallback__phone {
+          width: min(210px, 58vw);
+        }
+      }
     </style>
   </head>
 
   <body>
+    <div class="hero-fallback">
+      <div class="hero-fallback__copy">
+        <h1>Meet YUGC.<br />UGC videos<br />for your brand.</h1>
+        <p>Creator-style ads, made around your product.</p>
+      </div>
+      <div class="hero-fallback__phone">
+        <video src="mainflow/1_1_m.mp4" muted playsinline loop autoplay preload="auto"></video>
+      </div>
+    </div>
     <div class="header">
-  <a href="/" class="header__logo" aria-label="YUGC home">
+  <a href="./" class="header__logo" aria-label="YUGC home">
     <svg width="96" height="48" viewBox="0 0 96 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="0.5" y="0.5" width="95" height="47" rx="15.5" fill="#232323" fill-opacity="0.4" stroke="white" />
       <text x="48" y="30" text-anchor="middle" fill="white" font-size="16" font-family="Neue Haas Grotesk Display Pro, sans-serif" letter-spacing="1.4">YUGC</text>
@@ -64,7 +141,7 @@
         </div>
       </div>
       <div class="menu__dropdown">
-        <div class="menu__item btn"><a href="/press-center.html">Press Center</a></div>
+        <div class="menu__item btn"><a href="press-center.html">Press Center</a></div>
       </div>
     </div>
     <a class="betanew btn" href="https://cal.com/yaroshidi/discovery" target="_blank" rel="noopener noreferrer">
@@ -81,7 +158,7 @@
     </a>
   </div>
 </div>
-<script type="module" src="/funnel-link.js"></script>
+<script type="module" src="funnel-link.js"></script>
 
     <div class="download">
   <div class="download__overlay"></div>
@@ -102,7 +179,7 @@
     <h2 class="download__title">Get the YUGC app</h2>
     <p class="download__subtitle">Scan the QR code to download the app</p>
     <div class="download__qr">
-      <img src="/qr-download.svg" alt="QR code to download YUGC" />
+      <img src="qr-download.svg" alt="QR code to download YUGC" />
     </div>
   </div>
 </div>
@@ -140,22 +217,22 @@
       <div id="iphonecontent">
         <div class="iphonecontent__bg"></div>
         <div class="video">
-          <video src="/flow_fixed_m.mp4" muted playsinline autoplay preload></video>
+          <video class="flow-video" src="flow_fixed_m.mp4" muted playsinline loop preload="none"></video>
         </div>
         <div class="mainflow-iphone">
           <video
             class="mainflow-video active"
             data-index="0"
-            src="/mainflow/1_1_m.mp4"
+            src="mainflow/1_1_m.mp4"
             muted
             playsinline
             loop
-            autoplay
+            preload="none"
           ></video>
           <video
             class="mainflow-video"
             data-index="1"
-            src="/mainflow/1_2_m.mp4"
+            src="mainflow/1_2_m.mp4"
             muted
             playsinline
             loop
@@ -164,7 +241,7 @@
           <video
             class="mainflow-video"
             data-index="2"
-            src="/mainflow/1_3_m.mp4"
+            src="mainflow/1_3_m.mp4"
             muted
             playsinline
             loop
@@ -173,7 +250,7 @@
           <video
             class="mainflow-video"
             data-index="3"
-            src="/mainflow/1_41_m.mp4"
+            src="mainflow/1_41_m.mp4"
             muted
             playsinline
             loop
@@ -182,7 +259,7 @@
           <video
             class="mainflow-video"
             data-index="4"
-            src="/mainflow/1_5_m.mp4"
+            src="mainflow/1_5_m.mp4"
             muted
             playsinline
             loop
@@ -191,7 +268,7 @@
         </div>
         <div class="card card1">
           <h2 class="card__title">
-            Meet YUGC.<br />UGC videos for your brand.
+            Meet YUGC.<br />UGC videos<br />for your brand.
           </h2>
           <p class="card__text">
             Creator-style ads, made around your product.
@@ -378,7 +455,7 @@ No film crew. No edit suite.
           <div class="mainflow-mobile__phone">
             <div>
             <video
-              src="/mainflow/1_1_m.mp4"
+              src="mainflow/1_1_m.mp4"
               muted
               playsinline
               loop
@@ -394,7 +471,7 @@ No film crew. No edit suite.
           <div class="mainflow-mobile__phone">
             <div>
             <video
-              src="/mainflow/1_2_m.mp4"
+              src="mainflow/1_2_m.mp4"
               muted
               playsinline
               loop
@@ -412,7 +489,7 @@ No film crew. No edit suite.
           <div class="mainflow-mobile__phone">
             <div>
             <video
-              src="/mainflow/1_3_m.mp4"
+              src="mainflow/1_3_m.mp4"
               muted
               playsinline
               loop
@@ -430,7 +507,7 @@ No film crew. No edit suite.
           <div class="mainflow-mobile__phone">
             <div>
             <video
-              src="/mainflow/1_41_m.mp4"
+              src="mainflow/1_41_m.mp4"
               muted
               playsinline
               loop
@@ -447,40 +524,40 @@ No film crew. No edit suite.
 
       <div class="features">
         <div class="tag">What your brand gets</div>
-        <div class="feature" data-index="0" data-image="/features/0.png">
+        <div class="feature" data-index="0" data-image="features/0.png">
           <h2>Product demo</h2>
           <p>
            A creator holds the product and shows what it does,<br> in the length of a real post.
           </p>
-          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+          <a href="#" class="feature__more"><img src="arrowb.svg" /></a>
         </div>
-        <div class="feature" data-index="1" data-image="/features/1.png">
+        <div class="feature" data-index="1" data-image="features/1.png">
           <h2>Creator review</h2>
           <p>
            A first-person take that sounds like someone<br> just tried it and meant it.
           </p>
-          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+          <a href="#" class="feature__more"><img src="arrowb.svg" /></a>
         </div>
-        <div class="feature" data-index="2" data-image="/features/2.png">
+        <div class="feature" data-index="2" data-image="features/2.png">
           <h2>Unboxing</h2>
           <p>
            Open, react, and land the product on camera<br> the way a real creator would.
           </p>
-          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+          <a href="#" class="feature__more"><img src="arrowb.svg" /></a>
         </div>
-        <div class="feature" data-index="3" data-image="/features/3.png">
+        <div class="feature" data-index="3" data-image="features/3.png">
           <h2>Hook test</h2>
           <p>
            A few openings for the same product,<br> so you can run the one that stops the scroll.
           </p>
-          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+          <a href="#" class="feature__more"><img src="arrowb.svg" /></a>
         </div>
-        <div class="feature" data-index="4" data-image="/features/4.png">
+        <div class="feature" data-index="4" data-image="features/4.png">
           <h2>Offer video</h2>
           <p>
           The product, the line, and the ask,<br> cut as a UGC ad your brand can run.
           </p>
-          <a href="#" class="feature__more"><img src="/arrowb.svg" /></a>
+          <a href="#" class="feature__more"><img src="arrowb.svg" /></a>
         </div>
       </div>
 
@@ -603,7 +680,7 @@ No film crew. No edit suite.
     <script>
       document.querySelectorAll(".mainflow-video").forEach((video) => {
         const markReady = () => {
-          if (video.readyState >= 2) video.classList.add("is-ready");
+          if (video.readyState >= 2 && !video.classList.contains("is-ready")) video.classList.add("is-ready");
         };
         video.addEventListener("loadeddata", markReady);
         video.addEventListener("canplay", markReady);
@@ -618,8 +695,32 @@ No film crew. No edit suite.
           attributes: true,
           attributeFilter: ["class"],
         });
-        wake();
       });
+      const startVisibleVideos = () => {
+        document.querySelectorAll(".mainflow-video.active").forEach((video) => {
+          video.preload = "auto";
+          const play = video.play();
+          if (play) play.catch(() => {});
+        });
+        const flow = document.querySelector(".flow-video");
+        if (flow) {
+          flow.preload = "auto";
+          const play = flow.play();
+          if (play) play.catch(() => {});
+        }
+      };
+      if (document.body.classList.contains("is-ready")) startVisibleVideos();
+      else {
+        const readyWatch = new MutationObserver(() => {
+          if (!document.body.classList.contains("is-ready")) return;
+          readyWatch.disconnect();
+          startVisibleVideos();
+        });
+        readyWatch.observe(document.body, {
+          attributes: true,
+          attributeFilter: ["class"],
+        });
+      }
     </script>
   </body>
 </html>
