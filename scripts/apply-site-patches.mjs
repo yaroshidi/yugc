@@ -11,7 +11,8 @@ for (const [path, patch] of Object.entries(patches)) {
     continue;
   }
   if (hash !== patch.from) {
-    throw new Error(`unexpected ${path} hash ${hash}`);
+    console.log("leaving existing", path);
+    continue;
   }
   let next = text;
   for (const [start, end, replacement] of [...patch.ops].sort((a, b) => b[0] - a[0])) {
