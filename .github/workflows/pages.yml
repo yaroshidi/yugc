@@ -61,6 +61,11 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          shopt -s nullglob
+          mp4s=(public/*.mp4 public/mainflow/*.mp4)
+          if ((${#mp4s[@]})); then
+            git rm -f "${mp4s[@]}"
+          fi
           git add -A public
           if git diff --cached --quiet; then
             echo "site files already current"
