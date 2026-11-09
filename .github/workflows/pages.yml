@@ -23,51 +23,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Restore the previous site files
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Match the current site and encode WebM
         run: |
           set -euo pipefail
-          if grep -q 'hero-fallback' public/index.html; then
-            echo "Site files already include the Pages hero."
-            exit 0
-          fi
-          base=https://raw.githubusercontent.com/yaroshidi/yugc/c4a8828afd539c5ae5c95cc9e8a92dd8fd869d2d
-          files=(
-            public/assets/GravityBalls-D37pvzOo.js
-            public/assets/NeueHaasDisplay-XXThin-B_GJ8Mxd.js
-            public/assets/main-DLg1oGUN.js
-            public/assets/menu-DjKzWaJ3.css
-            public/careers.html
-            public/index.html
-            public/mainflow/1_41_m.mp4
-            public/press-center.html
-            public/privacy-policy.html
-            public/site.webmanifest
-            public/terms-of-use.html
-          )
-          for path in "${files[@]}"; do
-            curl -fsSL "$base/$path" -o "$path"
-          done
-          python3 - << 'PY'
-          from pathlib import Path
-          page = Path("public/index.html")
-          text = page.read_text()
-          old = 'if (video.readyState >= 2) video.classList.add("is-ready");'
-          new = 'if (video.readyState >= 2 && !video.classList.contains("is-ready")) video.classList.add("is-ready");'
-          if old not in text:
-              raise SystemExit("freeze guard pattern was not found")
-          page.write_text(text.replace(old, new, 1))
-          PY
+          node scripts/apply-site-patches.mjs
+
+          encode() {
+            local in="$1" out="$2"
+            shift 2
+            if [[ -f "$out" ]]; then
+              echo "have $out"
+              return
+            fi
+            if [[ ! -f "$in" ]]; then
+              echo "missing $in" >&2
+              exit 1
+            fi
+            ffmpeg -y -i "$in" -an "$@" "$out"
+          }
+
+          common=(-c:v libvpx-vp9 -row-mt 1 -cpu-used 6 -deadline good -threads 2 -tile-columns 1 -pix_fmt yuv420p -lag-in-frames 16)
+          encode public/girl.mp4 public/girl.webm "${common[@]}" -b:v 0 -crf 32
+          encode public/sprite_s.mp4 public/sprite_s.webm "${common[@]}" -b:v 0 -crf 32
+          encode public/casesprite.mp4 public/casesprite.webm "${common[@]}" -b:v 0 -crf 32
+          encode public/flow0_fixed.mp4 public/flow0_fixed.webm "${common[@]}" -b:v 0 -crf 33
+          encode public/flow_fixed_m.mp4 public/flow_fixed_m.webm "${common[@]}" -b:v 0 -crf 33
+          encode public/mainflow/1_1_m.mp4 public/mainflow/1_1_m.webm "${common[@]}" -b:v 0 -crf 36
+          encode public/mainflow/1_2_m.mp4 public/mainflow/1_2_m.webm "${common[@]}" -b:v 0 -crf 36
+          encode public/mainflow/1_5_m.mp4 public/mainflow/1_5_m.webm "${common[@]}" -b:v 0 -crf 36
+          encode public/mainflow/1_3_m.mp4 public/mainflow/1_3_m.webm -vf fps=30 "${common[@]}" -b:v 1200k -crf 38
+          encode public/mainflow/1_41_m.mp4 public/mainflow/1_41_m.webm "${common[@]}" -b:v 1400k -crf 40
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public
-          if [[ -f scripts/prepare-github-pages.mjs ]]; then
-            git rm -f scripts/prepare-github-pages.mjs
+          git add -A public
+          if git diff --cached --quiet; then
+            echo "site files already current"
+          else
+            git commit -m "Publish the WebM site without the fallback phone."
+            git push origin HEAD:main
           fi
-          git commit -m "Restore the GitHub Pages site and stop the video observer loop."
-          git push origin HEAD:main
 
       - uses: actions/upload-pages-artifact@v3
         with:
