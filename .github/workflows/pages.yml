@@ -32,6 +32,7 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/apply-site-patches.mjs
+          node scripts/apply-cleanup.mjs
 
           encode() {
             local in="$1" out="$2"
