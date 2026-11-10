@@ -23,6 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Apply background text
+        run: python3 .github/apply-background.py
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
