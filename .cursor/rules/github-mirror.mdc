@@ -1,0 +1,16 @@
+---
+description: The public GitHub repo must stay an exact copy of the tree shipped from this workspace.
+alwaysApply: true
+---
+
+# GitHub is an exact clone
+
+`yaroshidi/yugc` on GitHub is the public copy of this workspace. `main` there must match the commit you just shipped, path for path and git blob for blob. GitHub Pages publishes that tree. It does not get its own version of the site.
+
+After a change that belongs on the live site:
+
+1. Commit it here and push this branch.
+2. Update `yaroshidi/yugc` `main` so its tree is that commit. Copy video and image bytes as they are. Do not re-encode, recompress, or crop them on the way up.
+3. Run `node scripts/verify-github-mirror.mjs`. Stop if it reports a difference.
+
+The Pages workflow only deploys `public/`. It must not commit, re-encode clips, or replace stills. A generated `.webm` or `.png` is a different file, even when it looks similar.
