@@ -23,6 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Apply the Y mark and the original film
+        run: python3 .github/prepare-pages.py
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
