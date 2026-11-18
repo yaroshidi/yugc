@@ -1,0 +1,49 @@
+name: Strip remaining Elva names
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/strip-elva.py
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  strip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 .github/strip-elva.py
+      - name: Publish the renamed files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - << 'PY'
+          import re
+          from pathlib import Path
+          pat = re.compile(br"elva", re.I)
+          skip = {Path(".github/strip-elva.py"), Path(".github/workflows/strip-elva.yml")}
+          bad = []
+          for p in Path(".").rglob("*"):
+              if not p.is_file() or ".git" in p.parts or p in skip:
+                  continue
+              if pat.search(p.name.encode()) or pat.search(p.read_bytes()):
+                  bad.append(str(p))
+          if bad:
+              print("\n".join(bad))
+              raise SystemExit(1)
+          print("clean")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git rm -f .github/strip-elva.py .github/workflows/strip-elva.yml
+          git commit -m "Remove the remaining Elva names from the site code."
+          git push
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/yaroshidi/yugc/actions/workflows/pages.yml/dispatches \
+            -d '{"ref":"main"}'
