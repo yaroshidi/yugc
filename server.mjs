@@ -103,5 +103,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, "0.0.0.0", () => {
-  console.log(`Elva is running at http://127.0.0.1:${port}`);
+  console.log(`YUGC is running at http://127.0.0.1:${port}`);
 });
